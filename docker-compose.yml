@@ -4,8 +4,6 @@ services:
     image: dac-postgres
     ports:
      - "5432:5432"
-    volumes:
-     - postgres-volume-db:/var/lib/postgresql/data/
   web:
     build: .
     image: dac-exemplo-jsf
@@ -13,6 +11,3 @@ services:
      - "8080:8080"
     links:
      - postgres
-volumes:
-    postgres-volume-db:
-      driver: local
