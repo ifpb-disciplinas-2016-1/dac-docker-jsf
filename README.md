@@ -12,4 +12,4 @@ docker build -t dac-postgres
 docker run -p 5432:5432 dac-postgres
 
 #passo 5 - Iniciando o container da aplicação
-docker run -p 8080:8080 -p 4848:4848 dac-exemplo-jsf
+docker run -ti -p 8080:8080 -p 4848:4848 dac-exemplo-jsf

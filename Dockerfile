@@ -1,2 +1,6 @@
-FROM payara-micro
-ADD target/dac-exemplo.war ${DEPLOYMENT_DIR}
+FROM payara/server-web
+ENV DOMAIN domain1
+ENV DEPLOY ${PAYARA_PATH}/glassfish/domains/${DOMAIN}/autodeploy/
+ENTRYPOINT $PAYARA_PATH/bin/asadmin start-domain --verbose ${DOMAIN}
+WORKDIR /opt/payara41/glassfish/bin
+COPY target/ads-dac-jsf.war ${DEPLOY}
